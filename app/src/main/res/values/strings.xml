@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Case Study </string>
+    <string name="collection_name">Collection Name: %s</string>
+    <string name="track_name">Track Name: %s</string>
+    <string name="artist_name">Artist Name: %s</string>
+    <string name="kind_name">Kind: %s</string>
+    <string name="price">Price: %s</string>
+    <string name="recyclerview_empty_text">No results found,\n try a different keyword and category</string>
+</resources>

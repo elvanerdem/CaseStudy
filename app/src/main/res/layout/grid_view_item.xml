@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="property"
+            type="com.elvanerdem.itunessearchapp.network.SearchResultProperty" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_12dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_170dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:imageUrl="@{property.imgSrcUrl}"
+            tools:src="@tools:sample/backgrounds/scenic"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_16sp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            android:text="@{property.collectionName.empty ? property.trackName : property.collectionName}"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_14sp"
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/dimen_4dp"
+            android:layout_marginRight="@dimen/dimen_4dp"
+            android:layout_marginTop="@dimen/dimen_2dp"
+            android:text="@{property.formattedReleaseDate}"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_14sp"
+            android:textStyle="normal"
+            android:layout_marginLeft="@dimen/dimen_4dp"
+            android:layout_marginRight="@dimen/dimen_4dp"
+            android:layout_marginTop="@dimen/dimen_2dp"
+            android:text="@{property.price}"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
+
+</layout>

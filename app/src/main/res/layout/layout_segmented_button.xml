@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_96dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbMovies"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_segmented_left"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="@dimen/dimen_12dp"
+            android:text="Movies"
+            android:textColor="@drawable/btn_segmented_text"
+            android:checked="true"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <RadioButton
+            android:id="@+id/rbMusic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_segmented_center"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="@dimen/dimen_12dp"
+            android:text="Music"
+            android:textColor="@drawable/btn_segmented_text"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <RadioButton
+            android:id="@+id/rbApps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_segmented_center_without_border"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="@dimen/dimen_12dp"
+            android:text="Apps"
+            android:textColor="@drawable/btn_segmented_text"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <RadioButton
+            android:id="@+id/rbBooks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_segmented_right"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="@dimen/dimen_12dp"
+            android:text="Books"
+            android:textColor="@drawable/btn_segmented_text"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </RadioGroup>
+
+
+</LinearLayout>
+

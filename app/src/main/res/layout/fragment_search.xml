@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.elvanerdem.itunessearchapp.search.SearchViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            tools:context="com.elvanerdem.itunessearchapp.MainActivity">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_16dp"
+                app:cardCornerRadius="@dimen/dimen_8dp"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:paddingBottom="@dimen/dimen_2dp"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Arama" />
+
+            </androidx.cardview.widget.CardView>
+
+            <include
+                android:id="@+id/segmentedButton"
+                layout="@layout/layout_segmented_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:padding="@dimen/dimen_6dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:listData="@{viewModel.properties}"
+                app:spanCount="2"
+                tools:itemCount="20"
+                tools:listitem="@layout/grid_view_item" />
+
+            <ImageView
+                android:id="@+id/status_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:apiImgStatus="@{viewModel.status}" />
+
+            <TextView
+                android:id="@+id/status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/recyclerview_empty_text"
+                android:textColor="@color/empty_text_grey"
+                android:textSize="@dimen/text_size_14sp"
+                app:apiDescStatus="@{viewModel.status}" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:apiVisibility="@{viewModel.status}" />
+
+    </RelativeLayout>
+
+</layout>
